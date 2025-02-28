@@ -46,9 +46,10 @@ git clone https://github.com/DivyangJoshi1/google-sheet-clone.git
 cd google-sheet-clone
 ```
 
-### **2️⃣ Clone the Repository**
+### **2️⃣ Install Dependencies**
 ```sh
 npm install
+npm install react-icons
 ```
 
 ### **3️⃣ Start the Development Server**
