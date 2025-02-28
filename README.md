@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Google Sheets Clone  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based spreadsheet application that mimics **Google Sheets**, built using **React.js**. This project enables users to enter data, apply formulas, and perform spreadsheet operations with a UI similar to Google Sheets.  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Tech Stack & Data Structures Used  
 
-### `npm start`
+### **Frontend**  
+- **React.js** - Component-based UI development.  
+- **HTML & CSS** - Structuring and styling.  
+- **Vanilla JavaScript** - Core logic for spreadsheet interactions.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **State Management & Data Handling**  
+- **React useState & useEffect** - Manages spreadsheet cell updates and dependencies.  
+- **2D Arrays** (`grid[row][col]`) - Used to represent the spreadsheet grid efficiently.  
+- **HashMap (JS Object)** - Stores computed cell dependencies for formula evaluation.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Formula Parsing & Evaluation**  
+- **Regex-based Parsing** - Identifies and evaluates formulas (e.g., `=SUM(A1:A5)`).  
+- **Dependency Graph (Adjacency List)** - Keeps track of formula dependencies to update cells dynamically.  
 
-### `npm test`
+### **Why These Choices?**  
+- **React.js** makes UI updates smooth and efficient.  
+- **2D Arrays** allow fast cell access and updates.  
+- **HashMaps & Dependency Graphs** ensure efficient formula evaluation without unnecessary recalculations.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📌 Features  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ **Spreadsheet UI** - Google Sheets-like interface.  
+✅ **Data Entry & Formatting** - Input text, numbers, and formulas.  
+✅ **Formula Support** - Supports `SUM`, `AVERAGE`, `MAX`, `MIN`, `COUNT`, etc.  
+✅ **Cell Dependency Handling** - Automatically updates dependent cells.  
+✅ **Undo/Redo Actions** - Manage changes efficiently.  
+✅ **Drag & Drop Support** - Move or copy cell content dynamically.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚡ Installation & Running the Project  
 
-### `npm run eject`
+### **1️⃣ Clone the Repository**  
+```sh
+git clone https://github.com/DivyangJoshi1/google-sheet-clone.git
+cd google-sheet-clone
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **2️⃣ Clone the Repository**
+```npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **3️⃣ Start the Development Server**
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app will run at http://localhost:3000.
