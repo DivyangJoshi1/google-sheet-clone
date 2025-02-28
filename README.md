@@ -44,9 +44,11 @@ A web-based spreadsheet application that mimics **Google Sheets**, built using *
 ```sh
 git clone https://github.com/DivyangJoshi1/google-sheet-clone.git
 cd google-sheet-clone
+```
 
 ### **2️⃣ Clone the Repository**
 ```npm install
+```
 
 ### **3️⃣ Start the Development Server**
 npm start
