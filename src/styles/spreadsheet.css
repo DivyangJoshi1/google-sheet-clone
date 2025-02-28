@@ -1,0 +1,331 @@
+.spreadsheet-container {
+    width: 100%;
+    height: calc(100vh - 50px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #f1f3f4;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .spreadsheet-wrapper {
+    overflow: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid #dadce0;
+    background-color: white;
+  }
+  
+  .spreadsheet {
+    border-collapse: collapse;
+    width: max-content;
+    min-width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #dadce0;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .row-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+    width: 40px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 25px;
+    position: relative;
+  }
+  
+  .cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    padding: 3px;
+    box-sizing: border-box;
+  }
+  
+  .selected {
+    outline: 2px solid #1a73e8;
+  }
+  
+  .spreadsheet-wrapper::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .spreadsheet-wrapper::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 5px;
+  }
+  
+  .spreadsheet-wrapper::-webkit-scrollbar-track {
+    background: #f1f3f4;
+  }
+  .formula-bar {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    background: white;
+    border-bottom: 1px solid #dadce0;
+    padding: 0 8px;
+  }
+  
+  .formula-cell-indicator {
+    min-width: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #202124;
+    background: #f1f3f4;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 8px;
+  }
+  
+  .formula-icon {
+    color: #5f6368;
+    margin-right: 6px;
+  }
+  
+  .formula-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 4px;
+    color: #202124;
+  }
+.formula-bar {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background: white;
+  border-bottom: 1px solid #dadce0;
+  padding: 0 8px;
+  position: relative;
+}
+
+.named-range-tooltip {
+    position: absolute;
+    top: 35px;
+    left: 0; /* Align tooltip with left edge of the A1 box */
+    transform: translateX(0); /* Remove centering to prevent cutoff */
+    background: white;
+    border: 1px solid #dadce0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    font-size: 12px;
+    color: #202124;
+    white-space: normal;
+    border-radius: 4px;
+    z-index: 10;
+    width: 220px;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  /* Ensure tooltip appears on hover */
+  .formula-cell-indicator:hover .named-range-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Fix for when tooltip is near the left edge of the screen */
+  .named-range-tooltip.left-align {
+    left: 0;  /* Stick to left edge */
+    right: auto;
+    transform: none;
+  }
+  
+  /* Fix for when tooltip is near the right edge of the screen */
+  .named-range-tooltip.right-align {
+    left: auto;
+    right: 0;  /* Stick to right edge */
+    transform: none;
+  }
+  
+  /* Small arrow below the box */
+  .named-range-tooltip::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 16px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+  }
+  
+  /* Formula cell (A1 Box) */
+  .formula-cell-indicator {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: #202124;
+    background: #f1f3f4;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+.dropdown-icon {
+  margin-left: 4px;
+  color: #5f6368;
+}
+
+/* Spreadsheet container */
+.spreadsheet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f3f4;
+  overflow: auto;
+}
+
+.spreadsheet-wrapper {
+  width: max-content;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Table styling */
+.spreadsheet {
+  border-spacing: 0;
+  user-select: none;
+}
+
+.spreadsheet th,
+.spreadsheet td {
+  border: 1px solid #dcdcdc;
+  padding: 8px;
+  min-width: 80px;
+  height: 24px;
+  text-align: left;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.spreadsheet th {
+  background-color: #f1f3f4;
+  text-align: center;
+  font-weight: bold;
+}
+
+.row-header {
+  background-color: #f1f3f4;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Selected cell styling */
+.cell.selected {
+  position: relative;
+}
+
+/* Highlight selection area */
+.cell.highlight {
+  background-color: rgba(76, 139, 245, 0.2);
+}
+
+/* Outer selection border - applies only to the outer edges of the full selected range */
+.cell.highlight:first-child,
+.cell.highlight:last-child,
+.cell.highlight:first-of-type,
+.cell.highlight:last-of-type {
+  border: none; /* Remove default inner borders */
+}
+
+.cell.highlight {
+  box-shadow: none; /* Remove extra borders */
+}
+
+/* Borders only on the outermost edges */
+.cell.highlight.top-edge {
+  border-top: 2px solid #4c8bf5;
+}
+
+.cell.highlight.bottom-edge {
+  border-bottom: 2px solid #4c8bf5;
+}
+
+.cell.highlight.left-edge {
+  border-left: 2px solid #4c8bf5;
+}
+
+.cell.highlight.right-edge {
+  border-right: 2px solid #4c8bf5;
+}
+
+/* Rounded corners on the four corners of selection */
+.cell.highlight.top-left-corner {
+  border-top-left-radius: 4px;
+}
+
+.cell.highlight.top-right-corner {
+  border-top-right-radius: 4px;
+}
+
+.cell.highlight.bottom-left-corner {
+  border-bottom-left-radius: 4px;
+}
+
+.cell.highlight.bottom-right-corner {
+  border-bottom-right-radius: 4px;
+}
+
+/* Dragging visual indicator */
+.cell.dragging {
+  background-color: rgba(76, 139, 245, 0.3);
+}
+
+/* Fill handle ("+" pointer) styling */
+.fill-handle {
+  width: 6px;
+  height: 6px;
+  background-color: #4c8bf5;
+  border: 1px solid white;
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  cursor: crosshair;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+/* Adjust fill handle visibility */
+.cell.selected .fill-handle {
+  display: block;
+}
+
+.cell:not(.selected) .fill-handle {
+  display: none;
+}
+

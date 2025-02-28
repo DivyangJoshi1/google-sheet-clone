@@ -1,0 +1,21 @@
+.formula-bar {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .formula-icon {
+    margin-right: 8px;
+    color: #5f6368;
+  }
+  
+  .formula-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,64 @@
+.toolbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 50px;
+    margin: 10px auto;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 5px 15px;
+  }
+  
+  .toolbar-section {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  
+  .toolbar-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 5px;
+    color: #444;
+  }
+  
+  .toolbar-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .toolbar-dropdown,
+  .toolbar-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 14px;
+    background: white;
+  }
+  
+  .toolbar-dropdown {
+    cursor: pointer;
+  }
+  
+  .more-options {
+    margin-left: auto;
+  }
+  
+  .more-btn {
+    font-size: 20px;
+  }
+  
