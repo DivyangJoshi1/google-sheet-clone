@@ -2,6 +2,8 @@
 
 A web-based spreadsheet application that mimics **Google Sheets**, built using **React.js**. This project enables users to enter data, apply formulas, and perform spreadsheet operations with a UI similar to Google Sheets.  
 
+Demo Video : https://www.loom.com/share/5702ae73d91c43bba79e7e64443cae78?sid=06a4ec67-c91d-408d-b1a6-0f157e9bfc92
+
 ---
 
 ## 🚀 Tech Stack & Data Structures Used  
